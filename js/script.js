@@ -5,12 +5,14 @@ var euroAlKm = 0.21;
 var totalePrezzoViaggio = chilometriDaPercorrere * euroAlKm;
 
 if (etaPasseggero < 18) {
-    var scontoMinori = ( ( totalePrezzoViaggio * 20 ) / 100 );
+    var scontoMinori = ( ( totalePrezzoViaggio * 20 ) / 100 )
   }
-if (etaPasseggero > 65) {
-    var scontoOver = ( ( totalePrezzoViaggio * 40 ) / 100 );
+else if (etaPasseggero > 65) {
+    var scontoOver = ( ( totalePrezzoViaggio * 40 ) / 100 )
   }
-
+else if ((etaPasseggero >= 18) || (etaPasseggero <= 65)) {
+    alert('Niente sconto per te :)');
+  }
 var sconto = (totalePrezzoViaggio - scontoMinori) || (totalePrezzoViaggio - scontoOver);
 
 console.log(chilometriDaPercorrere);
@@ -20,3 +22,6 @@ console.log(totalePrezzoViaggio);
 console.log(scontoMinori);
 console.log(scontoOver);
 console.log(sconto);
+
+document.getElementById('prezzo').innerHTML = 'Il prezzo è di ' + totalePrezzoViaggio + '€';
+document.getElementById('sconto').innerHTML = 'Il prezzo scontato è di ' + sconto + '€';
