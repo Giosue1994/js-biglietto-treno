@@ -1,27 +1,17 @@
-var chilometriDaPercorrere = prompt('Quanti chilometri vuoi percorrere?');
-var etaPasseggero = prompt('Quanti anni hai?');
+// chiedere età del passeggero e chilometri da percorrere
+var eta = parseInt('Quanti anni hai?');
+var chilometri = parseInt('Quanti chilometri vuoi percorrere?');
 
+// costo del biglietto in base ai chilometri
 var euroAlKm = 0.21;
-var totalePrezzoViaggio = chilometriDaPercorrere * euroAlKm;
+var prezzoBiglietto = chilometri * euroAlKm;
+var costoBigl = document.getElementById('bigl-costo');
 
-var sconto = 0;
-
-if (etaPasseggero < 18) {
-    sconto = ( ( totalePrezzoViaggio * 20 ) / 100 )
+var genera = document.getElementById('genera');
+genera.addEventListener( 'click',
+  function() {
+  
   }
-else if (etaPasseggero > 65) {
-  sconto = ( ( totalePrezzoViaggio * 40 ) / 100 );
-  }
-else {
-    alert('Niente sconto per te :)');
-  }
-var prezzoScontato = totalePrezzoViaggio - sconto;
+)
 
-console.log(chilometriDaPercorrere);
-console.log(etaPasseggero);
-console.log(euroAlKm);
-console.log(totalePrezzoViaggio);
-console.log(sconto);
-
-document.getElementById('prezzo').innerHTML = 'Il prezzo è di ' + totalePrezzoViaggio + '€';
-document.getElementById('prezzoscontato').innerHTML = 'Il prezzo scontato è di ' + prezzoScontato + '€';
+costoBigl.innerHTML = prezzoBiglietto;

@@ -1,0 +1,24 @@
+/* ________ RESET ________ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ________ DEBUG ________ */
+.generazione-biglietto {
+  background-color: lightblue;
+}
+.dettaglio-passeggeri {
+  background-color: lightgreen;
+}
+
+/* ________ REGOLE GENERALI ________ */
+body {
+  font-family: arial;
+}
+
+section {
+  padding: 30px 0;
+  text-align: center;
+}
