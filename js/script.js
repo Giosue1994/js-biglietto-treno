@@ -9,6 +9,7 @@ var formEta = document.getElementById('form-eta');
 // altre variabili form
 var formKmValue;
 var formEtaValue;
+var errore = document.getElementById('errore');
 
 // SEZIONE BIGLIETTO
 var sezioneBiglietto = document.getElementById('biglietto');
@@ -25,44 +26,52 @@ var offerta;
 // Evento Bottone Genera
 genera.addEventListener( 'click',
   function() {
-    // kilometri passeggero
-    formKmValue = formKm.value;
-    // età passeggero
-    formEtaValue = formEta.value;
-
-    // numero carrozza
-    biglCarrozza.innerHTML = Math.floor(Math.random() * 10) + 1;
-    // codice CP
-    biglCodice.innerHTML = Math.floor(Math.random() * 10000) + 1000;
-
-    // costo del biglietto in base ai chilometri
-    prezzoBiglietto = formKmValue * 0.21;
-    // offerta standard
-    offerta = 'Prezzo standard';
-
-    //costo biglietto per minorenni
-    if (formEtaValue == 'minorenne') {
-      prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 20 / 100);
-      // offerta minorenni
-      offerta = 'Sconto per minorenni';
+    if ((formNome.value == '') || (formKmValue === '')) {
+      errore.className = 'visible';
+      sezioneBiglietto.className = 'hidden';
     }
-    //costo biglietto per over 65
-    else if (formEtaValue == 'over') {
-      prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 40 / 100);
-      // offerta over 65
-      offerta = 'Sconto per over 65';
+    else {
+      errore.className = 'hidden';
+
+      // kilometri passeggero
+      formKmValue = formKm.value;
+      // età passeggero
+      formEtaValue = formEta.value;
+
+      // numero carrozza
+      biglCarrozza.innerHTML = Math.floor(Math.random() * 10) + 1;
+      // codice CP
+      biglCodice.innerHTML = Math.floor(Math.random() * 10000) + 1000;
+
+      // costo del biglietto in base ai chilometri
+      prezzoBiglietto = formKmValue * 0.21;
+      // offerta standard
+      offerta = 'Prezzo standard';
+
+      //costo biglietto per minorenni
+      if (formEtaValue == 'minorenne') {
+        prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 20 / 100);
+        // offerta minorenni
+        offerta = 'Sconto per minorenni';
+      }
+      //costo biglietto per over 65
+      else if (formEtaValue == 'over') {
+        prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 40 / 100);
+        // offerta over 65
+        offerta = 'Sconto per over 65';
+      }
+
+      // Compilazione Biglietto
+      // inserisco nome nel biglietto
+      biglNome.innerHTML = formNome.value;
+      // inserisco prezzo nel biglietto
+      biglCosto.innerHTML = prezzoBiglietto.toFixed(2) + '€';
+      // inserisco offerta nel biglietto
+      biglOfferta.innerHTML = offerta;
+
+      // Mostra Biglietto
+      sezioneBiglietto.className = 'visible';
     }
-
-    // Compilazione Biglietto
-    // inserisco nome nel biglietto
-    biglNome.innerHTML = formNome.value;
-    // inserisco prezzo nel biglietto
-    biglCosto.innerHTML = prezzoBiglietto.toFixed(2) + '€';
-    // inserisco offerta nel biglietto
-    biglOfferta.innerHTML = offerta;
-
-    // Mostra Biglietto
-    sezioneBiglietto.className = 'visible';
   }
 );
 
@@ -74,7 +83,7 @@ annulla.addEventListener( 'click',
     // azzera km nel form
     formKmValue = formKm.value = '';
     // ripristina selezione età nel form
-    formEta.value = 'maggiorenne';
+    formEta.value = 'campo-vuoto';
 
     // cancella nome nel biglietto
     biglNome.innerHTML = '';
@@ -89,5 +98,8 @@ annulla.addEventListener( 'click',
 
     // Nascondi Biglietto
     sezioneBiglietto.className = 'hidden';
+
+    // Nascondi Errore
+    errore.className = 'hidden';
   }
 );

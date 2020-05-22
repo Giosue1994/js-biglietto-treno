@@ -16,7 +16,7 @@
             <!-- NOME E COGNOME-->
             <div class="box nominativo">
               <label>Nome Cognome</label>
-              <input id="form-nome" type="text" placeholder="Inserisci il to nome">
+              <input id="form-nome" type="text" placeholder="Inserisci il tuo nome">
             </div>
 
             <!-- CHILOMETRI-->
@@ -29,6 +29,7 @@
             <div class="box eta">
               <label>Fascia d'età</label>
               <select id="form-eta">
+                <option value="campo-vuoto">--</option>
                 <option value="maggiorenne">Maggiorenne</option>
                 <option value="minorenne">Minorenne</option>
                 <option value="over">Over 65</option>
@@ -40,6 +41,12 @@
           <div class="button">
             <button id="form-genera">Genera</button>
             <button id="form-annulla">Annulla</button>
+          </div>
+
+          <div id="errore" class="hidden">
+            <div class="errore">
+              <h4>"ERRORE IMMISSIONE! CONTROLLARE DATI INSERITI"</h4>
+            </div>
           </div>
         </div>
       </section>

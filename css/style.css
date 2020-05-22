@@ -14,10 +14,10 @@ body {
 section {
   padding: 10px 0;
 }
-/* #biglietto.hidden {
+.hidden {
   display: none;
-} */
-#biglietto.visible {
+}
+.visible {
   display: block;
 }
 
@@ -29,7 +29,7 @@ h2 {
 .container {
   background-color: white;
   border-radius: 10px;
-  width: 70%;
+  width: 80%;
   margin: 20px auto;
   padding: 20px;
   box-shadow: 2px 2px 2px #323232;
@@ -55,8 +55,17 @@ h2 {
   text-align: center;
   margin-top: 20px;
   display: block;
-  padding: 5px 0;
+  padding: 5px;
   border-radius: 5px;
+  font-size: 16px;
+}
+.generazione-biglietto .box input:focus,
+.generazione-biglietto .box select:focus {
+  background-color: #c9004f;
+  color: white;
+}
+.generazione-biglietto .box input:focus::placeholder {
+  color: white;
 }
 
 .button {
@@ -70,21 +79,31 @@ h2 {
   font-weight: bold;
   border-radius: 5px;
   padding: 5px;
-  border: 1px solid #c9004f;;
+  border: 1px solid #c9004f;
+  font-size: 16px;
+}
+.button button:hover {
+  background-color: #c9004f;
+  color: white;
 }
 
+.errore {
+  color: red;
+  font-weight: bold;
+}
 
 /* ________ SEZIONE BIGLIETTO ________ */
 .dettaglio-passeggeri {
   display: flex;
-  height: 100px;
+  height: 150px;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
 }
 
 .dettaglio-passeggeri .nome-passeggero {
+  width: 250px;
   background-color: #7f7f7f;
-  padding: 10px;
+  padding: 20px 10px;
   font-weight: bold;
 }
 
@@ -93,8 +112,8 @@ h2 {
   padding-left: 20px;
 }
 .dati-biglietto .box {
-  width: 200px;
-  line-height: 3;
+  width: 180px;
+  line-height: 4.5;
 }
 .dati-biglietto .box p {
   font-weight: bold;
