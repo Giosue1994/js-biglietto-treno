@@ -26,9 +26,10 @@ var offerta;
 // Evento Bottone Genera
 genera.addEventListener( 'click',
   function() {
-    if ((formNome.value == '') || (formKmValue === '')) {
+    if ((formNome.value == '', (!isNaN(formNome.value))) || (formKm.value == '') || (formEta.value == 'campo-vuoto')) {
       errore.className = 'visible';
       sezioneBiglietto.className = 'hidden';
+      alert('CAMPI VUOTI');
     }
     else {
       errore.className = 'hidden';
