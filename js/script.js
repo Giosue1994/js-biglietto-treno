@@ -26,11 +26,13 @@ var offerta;
 // Evento Bottone Genera
 genera.addEventListener( 'click',
   function() {
+    //Messaggio di Errore quando vengono inseriti dati sbagliati
     if ((formNome.value == '', (!isNaN(formNome.value))) || (formKm.value == '') || (formEta.value == 'campo-vuoto')) {
       errore.className = 'visible';
       sezioneBiglietto.className = 'hidden';
       alert('CAMPI VUOTI');
     }
+    // Compilazione biglietto quando vengono inseriti i dati corretti
     else {
       errore.className = 'hidden';
 
