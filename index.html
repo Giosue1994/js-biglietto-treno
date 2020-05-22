@@ -10,24 +10,24 @@
     <main>
       <!-- ________ SEZIONE CALCOLO ________ -->
       <section id="calcolo-biglietto">
-        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+        <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
         <div class="container">
-          <div class="generazione-biglietto text-center">
+          <div class="generazione-biglietto">
             <!-- NOME E COGNOME-->
-            <div class="box nominativo float-left">
-              <label>Nome Cognome</label><br>
+            <div class="box nominativo">
+              <label>Nome Cognome</label>
               <input id="form-nome" type="text" placeholder="Inserisci il to nome">
             </div>
 
             <!-- CHILOMETRI-->
-            <div class="box chilometri float-left">
-              <label>Km da percorrere</label><br>
+            <div class="box chilometri">
+              <label>Km da percorrere</label>
               <input id="form-km" type="number" placeholder="Inserisci i kilometri">
             </div>
 
             <!-- FASCIA D'ETÀ-->
-            <div class="box eta float-left">
-              <label>Fascia d'età</label><br>
+            <div class="box eta">
+              <label>Fascia d'età</label>
               <select id="form-eta">
                 <option value="maggiorenne">Maggiorenne</option>
                 <option value="minorenne">Minorenne</option>
@@ -35,11 +35,11 @@
               </select>
             </div>
 
-            <!-- BOTTONI-->
-            <div class="button clearfix text-center">
-              <button id="form-genera">Genera</button>
-              <button id="form-annulla">Annulla</button>
-            </div>
+          </div>
+          <!-- BOTTONI-->
+          <div class="button">
+            <button id="form-genera">Genera</button>
+            <button id="form-annulla">Annulla</button>
           </div>
         </div>
       </section>
@@ -49,31 +49,31 @@
         <h2>BIGLIETTO</h2>
         <div class="container c-bigl">
           <h3>DETTAGLIO PASSEGGERI</h3>
-          <div class="dettaglio-passeggeri clearfix">
 
-            <div class="nome-passeggero float-left">
+          <div class="dettaglio-passeggeri">
+            <div class="nome-passeggero">
               <h4>NOME PASSEGGEREO</h4>
               <span id="bigl-nome"></span>
             </div>
 
-            <div class="dati-biglietto float-left">
+            <div class="dati-biglietto">
 
-              <div class="box offerta float-left">
+              <div class="box offerta">
                 <p>Offerta</p>
                 <span id="bigl-offerta"></span>
               </div>
 
-              <div class="box carrozza float-left">
+              <div class="box carrozza">
                 <p>Carrozza</p>
                 <span id="bigl-carrozza"></span>
               </div>
 
-              <div class="box codice float-left">
+              <div class="box codice">
                 <p>Codice CP</p>
                 <span id="bigl-codice"></span>
               </div>
 
-              <div class="box costo float-left">
+              <div class="box costo">
                 <p>Costo biglietto</p>
                 <span id="bigl-costo"></span>
               </div>

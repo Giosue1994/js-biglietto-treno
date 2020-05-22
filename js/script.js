@@ -70,7 +70,7 @@ genera.addEventListener( 'click',
 annulla.addEventListener( 'click',
   function() {
     // cancella nome nel form
-    document.getElementById('form-nome').value = '';
+    formNome.value = '';
     // azzera km nel form
     formKmValue = formKm.value = '';
     // ripristina selezione età nel form
@@ -84,6 +84,8 @@ annulla.addEventListener( 'click',
     biglCarrozza.innerHTML = '';
     // cancella codice nel biglietto
     biglCodice.innerHTML = '';
+    // cancella codice nel biglietto
+    biglCosto.innerHTML = '';
 
     // Nascondi Biglietto
     sezioneBiglietto.className = 'hidden';
