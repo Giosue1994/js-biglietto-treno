@@ -105,6 +105,8 @@ h2 {
   background-color: #7f7f7f;
   padding: 20px 10px;
   font-weight: bold;
+  word-break: break-all;
+  overflow-y: auto;
 }
 
 .dati-biglietto {
