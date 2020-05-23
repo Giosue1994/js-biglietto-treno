@@ -138,6 +138,7 @@ h2 {
   }
   .generazione-biglietto .box input {
     width: 100%;
+    margin: 5px 0 30px;
   }
 
   .errore {
