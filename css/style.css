@@ -39,6 +39,7 @@ h2 {
   box-shadow: none;
 }
 
+
 /* ________ SEZIONE CALCOLO BIGLIETTO ________ */
 .generazione-biglietto {
   display: flex;
@@ -90,33 +91,70 @@ h2 {
 .errore {
   color: red;
   font-weight: bold;
+  padding-top: 20px;
 }
 
 /* ________ SEZIONE BIGLIETTO ________ */
 .dettaglio-passeggeri {
   display: flex;
-  height: 150px;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
 }
 
 .dettaglio-passeggeri .nome-passeggero {
-  width: 250px;
+  flex-basis: 30%;
   background-color: #7f7f7f;
   padding: 20px 10px;
   font-weight: bold;
   word-break: break-all;
   overflow-y: auto;
 }
+.dettaglio-passeggeri .nome-passeggero span {
+  color: cyan;
+}
 
 .dati-biglietto {
   display: flex;
-  padding-left: 20px;
+  flex-basis: 70%;
+  padding: 20px;
 }
 .dati-biglietto .box {
-  width: 180px;
-  line-height: 4.5;
+  flex-basis: calc( 100% / 4 );
+  padding-right: 10px;
 }
 .dati-biglietto .box p {
   font-weight: bold;
+  padding-bottom: 70px;
 }
+
+/* ________ MEDIA QUERY ________ */
+@media screen and (max-width: 1000px) {
+  /* ________ SEZIONE CALCOLO BIGLIETTO ________ */
+  .generazione-biglietto {
+    flex-direction: column;
+  }
+  .generazione-biglietto .box {
+    align-self: center;
+  }
+  .generazione-biglietto .box input {
+    width: 100%;
+  }
+
+  .errore {
+    text-align: center;
+  }
+
+  /* ________ SEZIONE BIGLIETTO ________ */
+  .dettaglio-passeggeri {
+    flex-direction: column;
+  }
+  .dati-biglietto {
+    flex-direction: column;
+    padding: 0 20px;;
+  }
+  .dati-biglietto .box p {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+}
+/* ________ FINE MEDIA QUERY ________ */

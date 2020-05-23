@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <title>Biglietto treno</title>
   </head>
@@ -45,7 +46,7 @@
 
           <div id="errore" class="hidden">
             <div class="errore">
-              <h4>"ERRORE IMMISSIONE! CONTROLLARE DATI INSERITI"</h4>
+              <h5>"ERRORE IMMISSIONE! CONTROLLARE DATI INSERITI"</h5>
             </div>
           </div>
         </div>
@@ -57,29 +58,31 @@
         <div class="container c-bigl">
           <h3>DETTAGLIO PASSEGGERI</h3>
 
+          <!-- NOME PASSEGGERO-->
           <div class="dettaglio-passeggeri">
             <div class="nome-passeggero">
               <h4>NOME PASSEGGEREO</h4>
               <span id="bigl-nome"></span>
             </div>
 
+            <!-- DATI BIGLIETTO -->
             <div class="dati-biglietto">
-
+              <!-- Offerta-->
               <div class="box offerta">
                 <p>Offerta</p>
                 <span id="bigl-offerta"></span>
               </div>
-
+              <!-- Carrozza -->
               <div class="box carrozza">
                 <p>Carrozza</p>
                 <span id="bigl-carrozza"></span>
               </div>
-
+              <!-- Codice -->
               <div class="box codice">
                 <p>Codice CP</p>
                 <span id="bigl-codice"></span>
               </div>
-
+              <!-- Costo -->
               <div class="box costo">
                 <p>Costo biglietto</p>
                 <span id="bigl-costo"></span>
@@ -91,6 +94,7 @@
       </section>
     </main>
 
+    <!-- ________ JAVASCRIPT ________ -->
     <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
